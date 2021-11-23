@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <title>Covid Map By Harshit</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #map{
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id='map'></div>
+    
+</body>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+<script src="map.js"></script>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiaGFyc2hpdG1pc2hyYSIsImEiOiJja3dia211b3MwMTd5Mm5xdm1yd2o1dmlxIn0.QQokhJ0cV4yV5EVchp1ymg';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [79,21],// setting centre to india
+    zoom:3      // zoomed the maped 3x
+  });
+</script>
+
+</html>
+
+
