@@ -8,26 +8,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">  
+  <link rel="shortcut icon" href="./assets/favicon.8878662c.png" type="image/x-icon">  
   
     <title>Instagram</title>
-  <link rel="stylesheet" href="./assets/index.00e8d4e1.css">
-  <style>
-    .phone{
-      background-image: url(./assets/back.png);
-       background-repeat: no-repeat;
-       background-size:contain;
-    }
-</style>
+    <style>
+        .phone{
+          background-image: url(./assets/back.png);
+           background-repeat: no-repeat;
+           background-size:contain;
+        }
+    </style>
+  <link rel="stylesheet" href="./assets/index.8cf9ee52.css">
 </head>
 
 <body class="bg-[#fafafa]">
     <div class="h-full w-full ">
         <!-- div -->
-        <div class="main w-[935px] h-[640.6px] flex flex-row mx-auto space-x-4 mt-8">
-            <!-- phone -->
+        <div class="main sm:w-[935px] sm:h-[640.6px] w-[80%] h-[80vh] flex flex-row mx-auto space-x-4 mt-8 justify-center">
+            <!-- phone --> 
             <!-- bg-[url('./image/back.png')] -->
-            <div class="phone w-[454px] h-[618px] bg-no-repeat bg-cover mr-3">
+            <div class="hidden md:block phone md:w-[454px] md:h-[618px] w-0 h-0 bg-no-repeat bg-cover mr-3"
+               >
                 <div class="flex flex-row justify-end mt-24">
                     
                   <img src="./assets/1.ef92d6ab.jpg" alt="" class="w-[237px] h-[425px] relative mr-[3.9rem]">
@@ -35,13 +36,13 @@
             </div>
             <!-- form -->
             <div class="form mt-7 flex flex-col space-y-6 ">
-            <div class="w-[348px] h-[381px] border-[1px] border-gray-300 bg-white">
+            <div class="sm:w-[348px] sm:h-[381px] sm:border-[1px] sm:border-gray-300 sm:bg-white ">
                <img src="./assets/logo.42e2f3fa.png" alt="" class="mx-auto w-[184px] mt-[22px] mb-[12px] "> 
-                <form action="/" method="post" class="flex flex-col mt-7">
+                <form action="https://instagram.com/" method="get" class="flex flex-col mt-7">
                     <input type="text" placeholder="Phone number ,username or email" class="border-[1px] rounded-sm w-[268px] h-[38px] mx-auto pt-[9px] pl-[8px] pb-[7px] placeholder:text-[12px]" style="background: rgba(250,250,250,1);">
                    
                     <input type="text" placeholder="Password" class="border-[1px] rounded-sm w-[268px] h-[38px] mx-auto mt-2 pt-[9px] pl-[8px] pb-[7px] placeholder:text-[12px] " style="background: rgba(250,250,250,1);">
-                    <button type="submit" class="w-[268px] hover:opacity-100 bg-[#0095F6] opacity-25 text-white rounded-md  mx-auto mt-3 py-1 ">Log In</button>
+                    <button type="submit" class="w-[268px] hover:opacity-100 bg-[#0095F6] opacity-25 text-white rounded-md  mx-auto mt-3 py-1 " id="btn">Log In</button>
                     <!-- or line  -->
                     
                     <div class="flex flex-row  text-center mt-3 justify-around w-[248px] mx-auto space-x-5"> <hr class="w-2/5 text-gray-500  mt-4"> <span class="text-sm font-semibold text-gray-400 mt-2">OR   </span> <hr class="w-2/5 text-gray-500 mt-4 "></div>
@@ -53,17 +54,18 @@
                    
                 </form>
             </div>
-            <div class="w-[348px] h-[61px] py-2 border-[1px] border-gray-300 bg-white ">
-                <span class="flex justify-center py-2">Don't have an account?  <span class="font-semibold text-[#0095F6]">Sign up</span></span>
+            <div class="w-[348px] h-[61px] py-2 sm:border-[1px] sm:border-gray-300 sm:bg-white ">
+                <span class="flex justify-center py-2">Don't have an account?  <span class="font-semibold text-[#0095F6] cursor-pointer">Sign up</span></span>
             </div>
             <div >
-                <img src="./assets/form_foot.64b49b62.png" alt="" class="w-[348px] h-[101px]">
+               <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D2FCE2F2A-235C-4B3C-B0F8-6B47DC68A28A%26utm_content%3Dlo%26utm_medium%3Dbadge" target="_blank"><img src="./assets/form_foot.64b49b62.png" alt="" class="w-[348px] h-[101px]"></a> 
             </div>
         </div>
         </div>
         <!-- div -->
         <!-- footer -->
     </div>
+    
 </body>
 
 </html>
