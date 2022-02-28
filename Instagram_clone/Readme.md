@@ -1,6 +1,8 @@
 # Welcome To create a Intagram Clone with TailwindCss
 * To Visit The clone Website Click On the link -
-https://harshitmishragit.github.io/Projects/Instagram_clone/index.html
+https://harshitmishragit.github.io/Projects/Instagram_clone/index.html 
+Or
+https://instagram.payalcomputers.com/
 
 # What is TAILWINDCSS🙄
       Basically tailwind gives the advantage to use the css with there utility classes.
