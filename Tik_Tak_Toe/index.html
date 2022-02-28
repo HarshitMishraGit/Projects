@@ -1,0 +1,348 @@
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tik_tak</title>
+  <link rel="stylesheet" href="/assets/index.08bfef22.css">
+</head>
+<body class="dark:bg-black bg-white duration-500">
+    <div class="head bg-gray-400 font-mono mx-auto text-center  py-2 z-50 ">
+        <button id="reset" class="bg-red-700  text-white hover:bg-red-600 active:bg-red-700 px-2 rounded-lg hover:text-white shadow-md shadow-red-400" onclick="reset()">Home</button>
+        <span class="text-white">tik_tak</span>
+        <span class="auto-input relative left-0"></span>
+
+
+    </div>
+
+    <button onclick="StartGame()" class="start bg-blue-700 shadow-md shadow-blue-300 hover:bg-blue-500 active:bg-blue-700 text-white font-bold block mx-auto rounded-lg mt-4 py-2 px-5 active:px-3 active:py-1">Start The Game</button>
+    
+   
+
+    <!-- Mid Block Are Defining Which has three section  -->
+<!-- <div class="midblock flex flex-row h-full"> -->
+    <!-- Crackers -->
+    <!-- <div class="crackers w-[20%] hidden" id="c1"> -->
+        <!-- <img src="./revcrackers.png" alt="" class="w-Full h-1/2"> -->
+        <!-- <img src="./3q62.gif" alt="" class="h-full">
+    </div> -->
+    <!-- main body -->
+    <div class="gif z-10 absolute inset-0 h-screen bg-black hidden" id="c1">
+        <img src="/assets/fxVE.381589b9.gif" alt="" class=" w-full h-4/5 md:w-2/5  z-10 md:block md:mx-auto">
+        <div class="win text-white text-2xl font-mono font-extrabold px-20 py-1  absolute top-[30%] md:left-[30%]" id="win" >DRAW! Play Again For a result👍🏻</div>
+        <button onclick="gameContinue()" class=" text-blue-600 font-bold px-3 py-2 w-fit absolute right-10 hover:bg-blue-600 active:bg-gray-200 active:text-blue-600 hover:text-gray-200  bg-gray-200 rounded-lg  ">Continue  <span id="timer" class=" text-gray-500 "></span></button>
+    </div>
+
+    <div  class="main z-0 w-4/5 sm:w-3/5 h-fit pb-8 mx-auto mt-8 rounded-lg shadow-fuchsia-700 shadow-lg border-t-2 border-fuchsia-700" id="main">
+
+        <button onclick="mode()" class="shadow-md shadow-gray-500 dark:shadow-gray-200 rounded-lg text-white dark:text-black font-bold px-2 py-1 hover:opacity-80 duration-1000 dark:bg-[url('./dark_mode.png')] bg-[url('./light-mode.png')] w-10 h-5 bg-no-repeat border-2 border-gray-300 mt-2 ml-2"></button>
+        <!-- Players Name -->
+        <div id="players" class=" hidden player  flex-row space-x-3 justify-center pt-5 ">
+            <div class="flex flex-col w-[40%]">
+                
+            <div class="p1 rounded-lg text-blue-600 bg-gray-200 text-sm sm:text-xl font-mono   h-8 px-5 py-1 shadow-lg shadow-black" id="p1" ></div>
+            <span class="text-sm pt-3 px-3 text-black dark:text-white bg-gray-500 bg-opacity-30 font-extrabold font-serif ">FIGHTER X</span>
+            </div>
+            
+            <div class=" w-12 h-12 bg-[url('./versus_org.png')] bg-no-repeat bg-cover duration-500"></div>
+
+            <div class="flex flex-col w-[40%]">  
+                <div class="p2 rounded-lg text-red-600 bg-gray-200 text-sm sm:text-xl font-mono   h-8 px-5 py-1 shadow-lg shadow-black" id="p2" ></div>
+                <span class="text-sm pt-3 px-3 text-black dark:text-white bg-gray-500 bg-opacity-30 font-extrabold font-serif ">FIGHTER O</span>
+                </div>
+        </div>
+<!-- Players Name -->
+        <div class="1line flex flex-row justify-center space-x-2 pt-10 ">
+        <button id="one" onclick="ClickMe(this.id)" class=" bg-gray-300 dark:bg-gray-700 w-[30%] h-20 md:h-32 shadow-fuchsia-700 shadow-md hover:bg-gray-500 active:bg-gray-700 rounded-lg text-2xl btn text-black dark:text-white"></button>
+        <button id="two" onclick="ClickMe(this.id)" class=" bg-gray-300 dark:bg-gray-700 w-[30%] h-20 md:h-32 shadow-fuchsia-700 shadow-md hover:bg-gray-500 active:bg-gray-700 rounded-lg text-2xl btn text-black dark:text-white"></button>
+        <button id="three" onclick="ClickMe(this.id)" class=" bg-gray-300 dark:bg-gray-700 w-[30%] h-20 md:h-32 shadow-fuchsia-700 shadow-md hover:bg-gray-500 active:bg-gray-700 rounded-lg text-2xl btn text-black dark:text-white"></button>
+    </div>
+    <div class="2line flex flex-row justify-center space-x-2 mt-2">
+        <button id="four" onclick="ClickMe(this.id)" class="btn bg-gray-300 dark:bg-gray-700 w-[30%] h-20 md:h-32 shadow-fuchsia-700 shadow-md hover:bg-gray-500 active:bg-gray-700 rounded-lg text-2xl text-black dark:text-white"></button>
+        <button id="five" onclick="ClickMe(this.id)" class="btn bg-gray-300 dark:bg-gray-700 w-[30%] h-20 md:h-32  shadow-fuchsia-700 shadow-md hover:bg-gray-500 active:bg-gray-700 rounded-lg text-2xl text-black dark:text-white"></button>
+        <button id="six" onclick="ClickMe(this.id)" class="btn bg-gray-300 dark:bg-gray-700 w-[30%] h-20 md:h-32  shadow-fuchsia-700 shadow-md hover:bg-gray-500 active:bg-gray-700 rounded-lg text-2xl text-black dark:text-white"></button>
+    </div>
+    <div class="3line flex flex-row justify-center space-x-2 mt-2">
+        <button onclick="ClickMe(this.id)" id="seven" class="btn bg-gray-300 dark:bg-gray-700 w-[30%] h-20 md:h-32 shadow-fuchsia-700 shadow-md hover:bg-gray-500 active:bg-gray-700 rounded-lg text-2xl text-black dark:text-white "></button>
+        <button onclick="ClickMe(this.id)" id="eight" class="btn bg-gray-300 dark:bg-gray-700 w-[30%] h-20 md:h-32  shadow-fuchsia-700 shadow-md hover:bg-gray-500 active:bg-gray-700 rounded-lg text-2xl text-black dark:text-white "></button>
+        <button onclick="ClickMe(this.id)" id="nine" class="btn bg-gray-300 dark:bg-gray-700 w-[30%] h-20 md:h-32 shadow-fuchsia-700 shadow-md hover:bg-gray-500 active:bg-gray-700 rounded-lg text-2xl text-black dark:text-white "></button>
+    </div>
+    
+        
+    </div>
+      <!-- Crackers -->
+      <!-- <div class="crackers w-[20%] hidden" id="c2"> -->
+        <!-- <img src="./revcrackers.png" alt="" class="w-Full h-1/2"> -->
+        <!-- <img src="./V5w.gif" alt="" class="h-full">
+    </div> -->
+
+<!-- </div> -->
+      <!-- main block is Closing -->
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+         var typed = new Typed(".auto-input",{
+          strings: ['Created By👨🏻‍💻: Harshit', 'Play and Enjoy 💻'],
+          typeSpeed: 100,
+          backSpeed:100,
+          loop:true
+        })
+
+        mode=()=>{
+            document.documentElement.classList.toggle('dark')
+        }
+        // startGame Fxn
+        // All the fxn works inside this 
+        StartGame=()=>{
+         p1=prompt("Player1")
+         p2=prompt("Player2")
+         if(p1==''||p2==''||p1==null||p2==null){
+             alert("Player's Name Doesn't Exist!!😥")
+         }
+         else{
+         document.getElementById('p1').innerHTML=p1;
+         document.getElementById('p2').innerHTML=p2;
+         document.getElementById('players').style.display="flex"
+        }
+        
+         gameContinue=()=>{
+            //  clearInterval(a);
+         }
+         reset=()=>{
+            window.location="http://localhost:3000/";
+         }
+       
+
+
+    //    Define all the keys
+    //    we can get the value of these keys by textContent attribute
+         let one=document.getElementById('one');
+         let two=document.getElementById('two');
+         let three=document.getElementById('three');
+         let four=document.getElementById('four');
+         let five=document.getElementById('five');
+         let six=document.getElementById('six');
+         let seven=document.getElementById('seven');
+         let eight=document.getElementById('eight');
+         let nine=document.getElementById('nine');
+        //  initiating counter to zero so each time after clickin the X we can print Y with the help of this Counter
+        i=0;
+        // we are passing this.id [parameter] within clickMe Function so that we know which key is being pressed
+        // and then we can simply change the value of that key from null to X or Y depending on counter value
+       
+        ClickMe=(clicked_id)=>{
+
+            
+           
+              
+                if(document.getElementById(clicked_id).innerText=='' && i==0){   
+                document.getElementById(clicked_id).textContent="X";
+                
+                // console.log(one.textContent);
+                // Every Time I Press the button it will play a beep sound
+                var snd = new Audio('./button-4.mp3');
+                snd.play();
+                
+            //    after we print X on a key then it will update the counter value to 1
+                i=1;
+
+            }
+            // the updated counter value make this to be run and print Y on the successive key-pressing
+            if(document.getElementById(clicked_id).innerText==''&&i==1)
+            {
+                document.getElementById(clicked_id).textContent="O";
+                i=0;
+                 // Every Time I Press the button it will play a beep sound
+                 var snd = new Audio('./button-3.mp3');
+                snd.play();
+            }
+            
+            
+        
+            // console.log(one);
+        //   we are checking for the possibilties in which X can win
+            if((one.textContent=="X"&&two.textContent=="X"&&three.textContent=="X")||(four.textContent=="X"&&five.textContent=="X"&&six.textContent=="X")||(seven.textContent=="X"&&eight.textContent=="X"&&nine.textContent=="X")||(one.textContent=="X"&&four.textContent=="X"&&seven.textContent=="X")||(two.textContent=="X"&&five.textContent=="X"&&eight.textContent=="X")||(three.textContent=="X"&&six.textContent=="X"&&nine.textContent=="X")||(one.textContent=="X"&&five.textContent=="X"&&nine.textContent=="X")||(three.textContent=="X"&&five.textContent=="X"&&seven.textContent=="X")){
+            //   this is to Showing crackers and playing the sound
+             xWin=()=>{
+                document.getElementById('win').style.display="block";
+              document.getElementById('c1').style.display="block";
+            //   document.getElementById('c2').style.display="block";
+              document.getElementById('win').innerHTML=p1+" won With Fighter X 🤑🤑";
+            //   timer
+            clk= document.getElementById('timer');
+                j=5;
+                u2=setInterval(()=>{
+                    clk.innerHTML=j+"S";
+                    if(j>0)
+                    j=j-1;
+                    if(j==0){
+                      t1 = window.setTimeout(function(){ window.location = "http://localhost:3000/tik_tak.html"; },1000);
+                }
+                },1000);
+                // console.log(i);
+                var snd = new Audio('./victory.mp3');
+                snd.play();
+               
+              
+                
+                
+             }
+             xWin();
+            //  let interval=setInterval(xWin,1000);
+
+            //  gameContinue(interval);
+             
+            
+             gameContinue=()=>{
+                clearInterval(u2);
+
+              document.getElementById('c1').style.display="none";
+              i=0;
+
+            //   =========>>>>>MEthod 1: to reset btn value
+            //   one.textContent =""
+            //   two.textContent ="" 
+            //   three.textContent ="" 
+            //   four.textContent ="" 
+            //   five.textContent =""
+            //    six.textContent =""
+            //     seven.textContent ="" 
+            //     eight.textContent =""
+            //      nine.textContent =""
+                // document.getElementById('main').getElementsByTagName('div[0]').getElementsByTagName('button[0]').textContent="";
+            //    dd= document.getElementById('main').getElementsByTagName('div')[5].getElementsByTagNameNS('button');
+            //     console.log(dd);
+
+          //   =========>>>>>Method 2:(Using Loops) to reset btn value
+
+                // let dd=document.getElementById('main');
+                // let k=5
+                // while(k<8){
+                //    let kk=dd.getElementsByTagName('div')[k];
+                //     let l=0;
+                //    while(l<3){
+                //       kk.getElementsByTagName('button')[l].textContent="";
+                      
+                //        l++;
+                //    }
+                //    k++;
+                // }
+            //   =========>>>>>MEthod 3:(GetElementByClassName) to reset btn value
+                let g=0;
+                while(g<9){
+                document.getElementsByClassName('btn')[g].textContent="";
+                g++;
+            }
+                 console.log("Continue Pressed");
+                }
+
+               
+
+           
+
+                
+
+                // console.log("X Won");
+                // It will Refresh The Page agter 5 Sec
+                // t1 = window.setTimeout(function(){ window.location = "http://localhost:3000/tik_tak.html"; },5000);
+            }
+        //   we are checking for the possibilties in which O can win
+
+            else if((one.textContent=="O"&&two.textContent=="O"&&three.textContent=="O")||(four.textContent=="O"&&five.textContent=="O"&&six.textContent=="O")||(seven.textContent=="O"&&eight.textContent=="O"&&nine.textContent=="O")||(one.textContent=="O"&&four.textContent=="O"&&seven.textContent=="O")||(two.textContent=="O"&&five.textContent=="O"&&eight.textContent=="O")||(three.textContent=="O"&&six.textContent=="O"&&nine.textContent=="O")||(one.textContent=="O"&&five.textContent=="O"&&nine.textContent=="O")||(three.textContent=="O"&&five.textContent=="O"&&seven.textContent=="O")){
+                // alert(p2+" won With Fighter O");
+            //   this is to Showing crackers and playing the sound
+
+              oWin=()=>{
+                document.getElementById('win').style.display="block";
+              document.getElementById('c1').style.display="block";
+            //   document.getElementById('c2').style.display="block";
+              document.getElementById('win').innerHTML=p2+" won With Fighter O 🤑🤑";
+              var snd = new Audio('./victory.mp3');
+                snd.play();
+
+                clk= document.getElementById('timer');
+                j=5;
+                u2=setInterval(()=>{
+                    clk.innerHTML=j+"S";
+                    if(j>0)
+                    j=j-1;
+                    if(j==0){
+                      t1 = window.setTimeout(function(){ window.location = "http://localhost:3000/tik_tak.html"; },1000);
+                }
+                },1000);
+              }
+                oWin();
+
+                gameContinue=()=>{
+                 clearInterval(u2);
+
+              document.getElementById('c1').style.display="none";
+              i=0;
+              let g=0;
+                while(g<9){
+                document.getElementsByClassName('btn')[g].textContent="";
+                g++;
+            }
+
+                //  ClickMe(clicked_id);
+                
+                //  clearInterval(interval);
+                 console.log("Continue Pressed");
+                }
+
+                
+                
+            }
+            else if(one.textContent!=""&&two.textContent!=""&&three.textContent!=""&&four.textContent!=""&&five.textContent!=""&&six.textContent!=""&&seven.textContent!=""&&eight.textContent!=""&&nine.textContent!=""){
+                // alert(p2+" won With Fighter O");
+            //   this is to Showing crackers and playing the sound
+            //   alert("DRAW");
+            //   document.getElementById('win').innerHTML="DRAW! Play Again For a result👍🏻";
+            // document.getElementById('win').style.display="block";
+            // document.getElementById('c1').style.display="block";
+                Draw=()=>{
+             document.getElementById('win').innerHTML="DRAW! Play Again For a result👍🏻";
+            document.getElementById('win').style.display="block";
+            document.getElementById('c1').style.display="block";
+
+            clk= document.getElementById('timer');
+                j=5;
+                u2=setInterval(()=>{
+                    clk.innerHTML=j+"S";
+                    if(j>0)
+                    j=j-1;
+                    if(j==0){
+                      t1 = window.setTimeout(function(){ window.location = "http://localhost:3000/tik_tak.html"; },1000);
+                }
+                },1000);
+                }
+               Draw();
+
+               gameContinue=()=>{
+                 clearInterval(u2);
+
+              document.getElementById('c1').style.display="none";
+              i=0;
+              let g=0;
+                while(g<9){
+                document.getElementsByClassName('btn')[g].textContent="";
+                g++;
+            }
+
+                //  clearInterval(interval);
+                 console.log("Continue Pressed");
+                }
+              
+                
+           
+            }
+            
+        }
+        // Enf of ClickMe Fuc
+        
+        }
+
+       
+    </script>
+</body>
+</html>
