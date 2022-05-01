@@ -1,0 +1,7 @@
+.p_tag{
+    overflow: scroll;
+}
+
+.p_tag::-webkit-scrollbar {
+    display: none;
+}
