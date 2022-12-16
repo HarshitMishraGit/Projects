@@ -1,7 +1,7 @@
 # Welcome To RealTime_Covid Map🗺️
   * To Visit the website Click on the link:
 
-https://harshitmishragit.github.io/Projects/Realtime%20covid%20map/covidmap.html
+https://realtimecovidmap.netlify.app/
 
 
 # Realtime Covid Map<br>
