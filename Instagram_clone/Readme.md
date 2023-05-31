@@ -3,6 +3,7 @@
 https://harshitmishragit.github.io/Projects/Instagram_clone/index.html 
 Or
 https://instagram.payalcomputers.com/
+![image](https://github.com/HarshitMishraGit/Projects/assets/93585405/d8ba2a8f-b589-4069-91dc-f3a0c8b95d4c)
 
 # What is TAILWINDCSS🙄
       Basically tailwind gives the advantage to use the css with there utility classes.
